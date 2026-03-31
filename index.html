@@ -1,114 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mital Labs — AI Consulting</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Inter+Var:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0b0c12;--surface:#141824;--muted:#a6b0c3;--text:#e8ebf1;--accent:#7c3aed;--accent2:#a78bfa;--card:#1e2130;--glow: 0 10px 30px rgba(124,58,237,.4)}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%}
-body{font-family:Inter, system-ui, -apple-system, Arial; background:radial-gradient( circle at 20% -10%, rgba(124,58,237,.25), transparent 40%), radial-gradient(circle at 100% 0%, rgba(0,212,255,.15), transparent 40%), var(--bg); color:var(--text); overflow-x:hidden}
-header{position:sticky;top:0;z-index:50;background:rgba(20,24,40,.94);backdrop-filter: saturate(1.2) blur(6px);border-bottom:1px solid rgba(124,58,237,.25)}
-.container{max-width:1100px;margin:0 auto;padding:20px 24px}
-.brand{font-weight:800;letter-spacing:.02em}
-.brand .em{color:var(--accent)}
-nav{display:flex;justify-content:space-between;align-items:center}
-nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;font-size:.95rem}
-.hero{min-height:85vh;display:flex;align-items:center}
-.grid{position: absolute; inset:0; overflow:hidden; pointer-events:none}
-.grid:before{content:""; position:absolute; width:100%; height:100%; background-image: radial-gradient(circle at 20px 20px, rgba(124,58,237,.25) 2px, transparent 2px); background-size: 40px 40px; opacity:.25; filter: saturate(1.2)}
-.hero-content{position:relative; z-index:1; display:flex; flex-direction:column; gap:20px; padding:40px; max-width:900px}
-.kicker{display:inline-block; padding:.25rem .75rem; border-radius:999px; border:1px solid rgba(124,58,237,.4); color:#d9ccff; font-size:.75rem; text-transform:uppercase; letter-spacing:.12em}
- h1{font-size:clamp(2.6rem,6vw,4.6rem); line-height:1.05; margin:0; font-weight:900; letter-spacing:-0.02em}
-.gradient{background: linear-gradient(90deg, #a78bfa, #7c3aed, #4c1d95); -webkit-background-clip: text; background-clip: text; color: transparent}
-.subtitle{font-size:1.1rem; color:var(--muted); max-width:60ch}
-.cta{display:inline-block; padding:.95rem 1.4rem; border-radius:12px; color:white; background:var(--accent); font-weight:700; text-decoration:none; box-shadow:var(--glow); transition: transform .2s ease, background .2s}
-.cta:hover{transform: translateY(-2px); background:#9c4aff}
-
-.section{padding:72px 0}
-.section h2{font-size:2rem; margin:0 0 8px}
-.section p{color:var(--muted)}
-.grid-cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:stretch}
-.card{background:var(--card); border:1px solid rgba(124,58,237,.25); border-radius:14px; padding:20px; transform: translateY(20px); opacity:0; transition: all .6s ease;}
-.card.visible{transform: none; opacity:1}
-.card h3{margin:0 0 6px}
-.card p{margin:0; color:var(--muted)}
-.brandline{font-size:.9rem; color:var(--muted); margin-top:6px}
-.trust{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
-.badge{background:#111827; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08); font-size:.8rem; color:#dbeafe}
-
-footer{text-align:center; padding:40px 0; color:var(--muted); font-size:.9rem}
-
-@media (max-width: 720px){
-  .hero{min-height:60vh}
-  h1{font-size:3rem}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mital Labs | AI-First Operations Consulting</title>
+    <meta name="description" content="Transform your organization with AI-first operating models. Expert advisory in automation, org design, and operational excellence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
-    <div class="brand">Mital <span class="em">Labs</span></div>
-    <nav aria-label="Main navigation">
-      <a href="#why">Why Us</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Mital Labs</div>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#approach" class="nav-link">Approach</a>
+                <a href="#clients" class="nav-link">Clients</a>
+                <a href="#contact" class="nav-link nav-cta">Get Started</a>
+            </div>
+        </div>
     </nav>
-  </div>
-</header>
-<main class="hero container">
-  <div class="hero-content" id="top">
-    <span class="kicker">AI Consulting & Implementation</span>
-    <h1><span class="gradient">AI Consulting</span> for the Modern Enterprise</h1>
-    <p class="subtitle">Shaping resilient AI-driven operations with strategic guidance, production-ready architectures, and measurable business impact.</p>
-    <a href="#services" class="cta">Explore our approach</a>
-  </div>
-  <div class="grid" aria-hidden="true"></div>
-</main>
-<section id="why" class="section container" style="padding-top:0">
-  <h2>Why Mital Labs</h2>
-  <p>Partner with a studio that blends strategic leadership with hands‑on execution. We deliver clear roadmaps, robust architectures, and transparency you can trust.</p>
-  <div class="trust" aria-label="credibility">
-    <span class="badge">Enterprise-grade security & compliance</span>
-    <span class="badge"> measured outcomes & ROI</span>
-    <span class="badge">Direct CTO-level collaboration</span>
-  </div>
-</section>
-<section id="services" class="section container" aria-labelledby="services-heading">
-  <h2 id="services-heading">Services</h2>
-  <p>From AI strategy to scalable automation, designed for fast-moving enterprises.</p>
-  <div class="grid-cards" id="service-cards">
-    <div class="card"><h3>AI Strategy</h3><p>Identify high-impact opportunities and create an actionable roadmap with milestones.</p></div>
-    <div class="card"><h3>Workflow Automation</h3><p>Design and deploy intelligent processes that reduce toil and accelerate outcomes.</p></div>
-    <div class="card"><h3>Agent Architecture</h3><p>Build autonomous agents capable of end-to-end execution across teams.</p></div>
-  </div>
-</section>
-<section id="contact" class="section container" aria-labelledby="contact-heading">
-  <h2 id="contact-heading">Contact</h2>
-  <p>Let’s discuss how AI can transform your business.</p>
-  <p><a href="mailto:tony@mital.ai">tony@mital.ai</a></p>
-</section>
-<footer>
-  © 2026 Mital Labs. All rights reserved.
-</footer>
-<script>
-  // Simple scroll-reveal animations using IntersectionObserver
-  document.addEventListener('DOMContentLoaded', function(){
-    const sections = document.querySelectorAll('.card');
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
-    },{rootMargin:'0px 0px -20% 0px', threshold:0.15});
-    sections.forEach(s=>obs.observe(s));
 
-    // Parallax sheen on hero background
-    const hero = document.querySelector('.hero');
-    window.addEventListener('scroll', ()=>{
-      const y = window.scrollY * 0.25;
-      hero.style.backgroundPosition = `0 ${y}px`;
-    });
-  });
-</script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Build AI-First <span class="gradient-text">Operating Models</span> That Scale
+                </h1>
+                <p class="hero-subtitle">
+                    Expert advisory for emerging tech companies navigating organizational transformation in an AI-enabled world
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="#approach" class="btn btn-secondary">Our Approach</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-text">Process Automation</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-text">Org Design</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-text">Operational Excellence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Specialized expertise for modern organizations</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">AI Automation Implementation</h3>
+                    <p class="service-description">
+                        Design and deploy intelligent automation systems that transform manual workflows into scalable, AI-powered operations. From workflow mapping to production deployment.
+                    </p>
+                    <ul class="service-features">
+                        <li>Process identification & mapping</li>
+                        <li>Tool selection & integration</li>
+                        <li>Workflow automation design</li>
+                        <li>Implementation & optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon">🏗️</div>
+                    <h3 class="service-title">Organization Design Advisory</h3>
+                    <p class="service-description">
+                        Restructure teams and operations for the AI era. Expert guidance on roles, reporting structures, decision frameworks, and governance models that enable agility and scale.
+                    </p>
+                    <ul class="service-features">
+                        <li>Organizational structure design</li>
+                        <li>Role definition & clarity</li>
+                        <li>Decision-making frameworks</li>
+                        <li>Change management support</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Operational Support Services</h3>
+                    <p class="service-description">
+                        Hands-on execution support for growing companies. From process documentation to tool implementation, we provide the operational backbone you need to scale.
+                    </p>
+                    <ul class="service-features">
+                        <li>Process documentation</li>
+                        <li>Tool setup & administration</li>
+                        <li>Workflow optimization</li>
+                        <li>Ongoing operational support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="approach">
+        <div class="container">
+            <div class="approach-content">
+                <div class="approach-text">
+                    <h2 class="section-title">Research-Driven, Reality-Tested</h2>
+                    <p class="approach-description">
+                        We don't just implement tools—we study how organizations actually work in the AI era. Our approach combines deep research on emerging organizational patterns with hands-on experience deploying systems for real companies.
+                    </p>
+                    <div class="approach-stats">
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Learning Mindset</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="approach-visual">
+                    <div class="approach-step">
+                        <div class="step-number">01</div>
+                        <h4 class="step-title">Understand</h4>
+                        <p class="step-description">Deep dive into your current state, challenges, and goals</p>
+                    </div>
+                    <div class="approach-step">
+                        <div class="step-number">02</div>
+                        <h4 class="step-title">Design</h4>
+                        <p class="step-description">Create tailored solutions grounded in research and best practices</p>
+                    </div>
+                    <div class="approach-step">
+                        <div class="step-number">03</div>
+                        <h4 class="step-title">Implement</h4>
+                        <p class="step-description">Execute with precision, iterate based on feedback</p>
+                    </div>
+                    <div class="approach-step">
+                        <div class="step-number">04</div>
+                        <h4 class="step-title">Optimize</h4>
+                        <p class="step-description">Continuous improvement and knowledge transfer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted By</h2>
+                <p class="section-subtitle">Emerging tech companies building the future</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card">
+                    <h4 class="client-name">Decentralization Research Center</h4>
+                    <p class="client-type">Blockchain Policy Nonprofit</p>
+                    <p class="client-work">Ongoing operational support and process optimization</p>
+                </div>
+                <div class="client-card">
+                    <h4 class="client-name">XTrace AI</h4>
+                    <p class="client-type">Seed-Stage AI Startup</p>
+                    <p class="client-work">AI implementation strategy and automation architecture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="research">
+        <div class="container">
+            <div class="research-content">
+                <div class="research-icon">🔬</div>
+                <h2 class="research-title">Advanced Research Lab</h2>
+                <p class="research-description">
+                    We're actively researching the future of work: how AI-first organizations structure themselves, make decisions, and scale. Our consulting insights are informed by continuous study of emerging organizational patterns.
+                </p>
+                <a href="#contact" class="btn btn-secondary">Discuss Research Collaboration</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Ready to Transform Your Operations?</h2>
+                <p class="contact-subtitle">Let's discuss how we can help you build an AI-first operating model</p>
+                <div class="contact-info">
+                    <a href="mailto:tony@mital.ai" class="contact-email">tony@mital.ai</a>
+                    <p class="contact-note">Typically respond within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Mital Labs</div>
+                <div class="footer-links">
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#approach" class="footer-link">Approach</a>
+                    <a href="#clients" class="footer-link">Clients</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2026 Mital Labs. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
