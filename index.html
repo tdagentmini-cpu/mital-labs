@@ -1,88 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mital Labs — AI Consulting</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{--bg:#0a0a0f;--surface:#14141f;--accent:#6366f1;--accent-light:#818cf8;--text:#e2e8f0;--muted:#94a3b8}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    nav{position:fixed;top:0;width:100%;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,.85);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid rgba(99,102,241,.15)}
-    .logo{font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
-    .logo span{color:var(--accent-light)}
-    nav a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:color .2s}nav a:hover{color:var(--accent-light)}
-    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6rem 2rem 4rem}
-    .hero-badge{display:inline-block;padding:.4rem 1rem;border-radius:999px;border:1px solid rgba(99,102,241,.3);color:var(--accent-light);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2rem}
-    h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;max-width:800px;margin-bottom:1.5rem}
-    h1 .gradient{background:linear-gradient(135deg,var(--accent-light),#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .subtitle{font-size:clamp(1.05rem,2.5vw,1.35rem);color:var(--muted);max-width:600px;margin-bottom:2.5rem}
-    .cta{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .25s}  .cta:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.35)}
-    .grid-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(99,102,241,.08) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
-    section{padding:6rem 2rem}
-    .services{max-width:1000px;margin:0 auto;text-align:center}
-    .services h2{font-size:2rem;font-weight:700;margin-bottom:1rem}
-    .services p{color:var(--muted);max-width:550px;margin:0 auto 3rem}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-    .card{background:var(--surface);border:1px solid rgba(99,102,241,.12);border-radius:12px;padding:2rem;text-align:left;transition:border-color .25s,transform .25s}
-    .card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-4px)}
-    .card-icon{font-size:1.8rem;margin-bottom:1rem}
-    .card h3{font-size:1.15rem;margin-bottom:.5rem}
-    .card p{color:var(--muted);font-size:.92rem}
-    .contact{max-width:600px;margin:0 auto;text-align:center;padding-bottom:4rem}
-    .contact h2{font-size:2rem;font-weight:700;margin-bottom:1rem}
-    .contact p{color:var(--muted);margin-bottom:2rem}
-    .email-link{display:inline-flex;align-items:center;gap:.6rem;font-size:1.15rem;color:var(--accent-light);text-decoration:none;padding:.75rem 1.5rem;border:1px solid rgba(99,102,241,.3);border-radius:8px;transition:all .25s}
-    .email-link:hover{background:rgba(99,102,241,.1);border-color:var(--accent-light)}
-    footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid rgba(99,102,241,.1)}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mital Labs — AI Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Inter+Var:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0c12;--surface:#141824;--muted:#a6b0c3;--text:#e8ebf1;--accent:#7c3aed;--accent2:#a78bfa;--card:#1e2130;--glow: 0 10px 30px rgba(124,58,237,.4)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:Inter, system-ui, -apple-system, Arial; background:radial-gradient( circle at 20% -10%, rgba(124,58,237,.25), transparent 40%), radial-gradient(circle at 100% 0%, rgba(0,212,255,.15), transparent 40%), var(--bg); color:var(--text); overflow-x:hidden}
+header{position:sticky;top:0;z-index:50;background:rgba(20,24,40,.94);backdrop-filter: saturate(1.2) blur(6px);border-bottom:1px solid rgba(124,58,237,.25)}
+.container{max-width:1100px;margin:0 auto;padding:20px 24px}
+.brand{font-weight:800;letter-spacing:.02em}
+.brand .em{color:var(--accent)}
+nav{display:flex;justify-content:space-between;align-items:center}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;font-size:.95rem}
+.hero{min-height:85vh;display:flex;align-items:center}
+.grid{position: absolute; inset:0; overflow:hidden; pointer-events:none}
+.grid:before{content:""; position:absolute; width:100%; height:100%; background-image: radial-gradient(circle at 20px 20px, rgba(124,58,237,.25) 2px, transparent 2px); background-size: 40px 40px; opacity:.25; filter: saturate(1.2)}
+.hero-content{position:relative; z-index:1; display:flex; flex-direction:column; gap:20px; padding:40px; max-width:900px}
+.kicker{display:inline-block; padding:.25rem .75rem; border-radius:999px; border:1px solid rgba(124,58,237,.4); color:#d9ccff; font-size:.75rem; text-transform:uppercase; letter-spacing:.12em}
+ h1{font-size:clamp(2.6rem,6vw,4.6rem); line-height:1.05; margin:0; font-weight:900; letter-spacing:-0.02em}
+.gradient{background: linear-gradient(90deg, #a78bfa, #7c3aed, #4c1d95); -webkit-background-clip: text; background-clip: text; color: transparent}
+.subtitle{font-size:1.1rem; color:var(--muted); max-width:60ch}
+.cta{display:inline-block; padding:.95rem 1.4rem; border-radius:12px; color:white; background:var(--accent); font-weight:700; text-decoration:none; box-shadow:var(--glow); transition: transform .2s ease, background .2s}
+.cta:hover{transform: translateY(-2px); background:#9c4aff}
+
+.section{padding:72px 0}
+.section h2{font-size:2rem; margin:0 0 8px}
+.section p{color:var(--muted)}
+.grid-cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:stretch}
+.card{background:var(--card); border:1px solid rgba(124,58,237,.25); border-radius:14px; padding:20px; transform: translateY(20px); opacity:0; transition: all .6s ease;}
+.card.visible{transform: none; opacity:1}
+.card h3{margin:0 0 6px}
+.card p{margin:0; color:var(--muted)}
+.brandline{font-size:.9rem; color:var(--muted); margin-top:6px}
+.trust{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
+.badge{background:#111827; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.08); font-size:.8rem; color:#dbeafe}
+
+footer{text-align:center; padding:40px 0; color:var(--muted); font-size:.9rem}
+
+@media (max-width: 720px){
+  .hero{min-height:60vh}
+  h1{font-size:3rem}
+}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="logo"><span>Mital</span> Labs</div>
-    <a href="#contact">Get in Touch</a>
-  </nav>
-
-  <section class="hero" style="position:relative;overflow:hidden">
-    <div class="grid-bg"></div>
-    <span class="hero-badge">AI Consulting &amp; Implementation</span>
+<header>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+    <div class="brand">Mital <span class="em">Labs</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#why">Why Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="hero container">
+  <div class="hero-content" id="top">
+    <span class="kicker">AI Consulting & Implementation</span>
     <h1><span class="gradient">AI Consulting</span> for the Modern Enterprise</h1>
-    <p class="subtitle">We design, build, and deploy intelligent systems that transform how your organization operates — from strategy to production.</p>
-    <a href="#contact" class="cta">Start a Conversation &rarr;</a>
-  </section>
+    <p class="subtitle">Shaping resilient AI-driven operations with strategic guidance, production-ready architectures, and measurable business impact.</p>
+    <a href="#services" class="cta">Explore our approach</a>
+  </div>
+  <div class="grid" aria-hidden="true"></div>
+</main>
+<section id="why" class="section container" style="padding-top:0">
+  <h2>Why Mital Labs</h2>
+  <p>Partner with a studio that blends strategic leadership with hands‑on execution. We deliver clear roadmaps, robust architectures, and transparency you can trust.</p>
+  <div class="trust" aria-label="credibility">
+    <span class="badge">Enterprise-grade security & compliance</span>
+    <span class="badge"> measured outcomes & ROI</span>
+    <span class="badge">Direct CTO-level collaboration</span>
+  </div>
+</section>
+<section id="services" class="section container" aria-labelledby="services-heading">
+  <h2 id="services-heading">Services</h2>
+  <p>From AI strategy to scalable automation, designed for fast-moving enterprises.</p>
+  <div class="grid-cards" id="service-cards">
+    <div class="card"><h3>AI Strategy</h3><p>Identify high-impact opportunities and create an actionable roadmap with milestones.</p></div>
+    <div class="card"><h3>Workflow Automation</h3><p>Design and deploy intelligent processes that reduce toil and accelerate outcomes.</p></div>
+    <div class="card"><h3>Agent Architecture</h3><p>Build autonomous agents capable of end-to-end execution across teams.</p></div>
+  </div>
+</section>
+<section id="contact" class="section container" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Contact</h2>
+  <p>Let’s discuss how AI can transform your business.</p>
+  <p><a href="mailto:tony@mital.ai">tony@mital.ai</a></p>
+</section>
+<footer>
+  © 2026 Mital Labs. All rights reserved.
+</footer>
+<script>
+  // Simple scroll-reveal animations using IntersectionObserver
+  document.addEventListener('DOMContentLoaded', function(){
+    const sections = document.querySelectorAll('.card');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
+    },{rootMargin:'0px 0px -20% 0px', threshold:0.15});
+    sections.forEach(s=>obs.observe(s));
 
-  <section style="background:var(--surface)">
-    <div class="services">
-      <h2>What We Do</h2>
-      <p>End-to-end AI consulting — from identifying high-impact opportunities to deploying production-grade systems.</p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">&#x1F9E0;</div>
-          <h3>AI Strategy</h3>
-          <p>Identify where AI creates the most value in your business and build a practical roadmap to get there.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#x2699;&#xFE0F;</div>
-          <h3>Workflow Automation</h3>
-          <p>Design and implement intelligent automation that eliminates repetitive work and reduces operational costs.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#x1F680;</div>
-          <h3>Agent Architecture</h3>
-          <p>Build autonomous AI agents that handle complex, multi-step tasks — from research to execution.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="contact">
-      <h2>Let's Talk</h2>
-      <p>Ready to explore what AI can do for your organization? Reach out and we'll set up a conversation.</p>
-      <a href="mailto:tony@mital.ai" class="email-link">&#x2709;&#xFE0F; tony@mital.ai</a>
-    </div>
-  </section>
-
-  <footer>&copy; 2026 Mital Labs. All rights reserved.</footer>
+    // Parallax sheen on hero background
+    const hero = document.querySelector('.hero');
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY * 0.25;
+      hero.style.backgroundPosition = `0 ${y}px`;
+    });
+  });
+</script>
 </body>
 </html>
